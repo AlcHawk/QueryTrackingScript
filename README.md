@@ -1,2 +1,2 @@
 # QueryTrackingScript
-Generate report for query tracking
+Generate report for query tracking which is used in Google Spreadsheet
