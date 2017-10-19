@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+      <!-- Compiled and minified CSS -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
+
+
+  </head>
+  <body>
+      <div class="section">
+          <div class="container">
+              <h5 class="center"><span class="red-text">Report</span> Functions</h5>
+          </div>
+      </div>
+
+      <div class="divider"></div>
+      
+      <div class="section">
+              <div class="row">
+                  <h6 class="center">Sheet <mark>Total</mark></h6>
+              </div>
+
+              <div class="center">
+                  <a id="create-sheet-total" class="waves-effect waves-light btn blue lighten-2">Create Sheet</a>
+              </div>
+              <br>
+              
+              <div class="center">
+                  <a id="set-row-total" class="waves-effect waves-light btn blue lighten-2">Set column</a>
+              </div>
+      </div>
+
+      <div class="section">
+              <div class="row">
+                  <h6 class="center">Sheet <mark>Count By Subject</mark></h6>
+              </div>
+              <div class="center">
+                  <a id="create-sheet-countsubj" class="waves-effect waves-light btn blue lighten-2">Create Sheet</a>
+              </div>
+      </div>
+      
+      <div class="section">
+              <div class="row">
+                  <h6 class="center">Sheet <mark>Count By Batch</mark></h6>
+              </div>
+              <div class="center">
+                  <a id="create-sheet-countbatch" class="waves-effect waves-light btn blue lighten-2">Create Sheet</a>
+              </div>
+      </div>
+      
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      
+      <!-- Compiled and minified JavaScript -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+      <script>
+          $(function() {
+            $("#create-sheet-total").on('click', function() {
+              google.script.run
+              .withSuccessHandler()
+              .createSheetTotal();
+            });
+            
+            $("#set-row-total").on('click', function() {
+              google.script.run.setTotalCol();
+            });
+              
+            $("#create-sheet-countsubj").on('click', function() {
+              google.script.run.createSheetCount();
+            });
+            
+            $("#create-sheet-countbatch").on('click', function() {
+              google.script.run.createSheetBatch();
+            });
+          });
+          
+          /*
+          $(function() {
+            $("#set-row-total").click(google.script.run.setTotalRow());
+          });
+
+          $(function() {
+            $("#create-sheet-countsubj").click(google.script.run.createSheetCount());
+          });
+          
+          $(function() {
+            $("#create-sheet-countbatch").click(google.script.run.createSheetBatch());
+          });
+          
+          */
+      </script>
+  </body>
+</html>
+
+
